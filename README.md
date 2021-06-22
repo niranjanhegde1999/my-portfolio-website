@@ -1,1 +1,0 @@
-# niranjan-hegde.me
