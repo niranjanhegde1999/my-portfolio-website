@@ -8,7 +8,7 @@
     /* =============== Colors =============== */
     --hue-color: 219;
     --first-color: hsl(var(--hue-color), 100%, 55%);
-    --first-color-lighter: hsl(var(--hue-color), 100%, 65%);
+    --first-color-lighter: hsl(var(--hue-color), 100%, 85%);
     --first-color-alt: hsl(var(--hue-color), 100%, 38%);
     --title-color: hsl(var(--hue-color), 10%, 15%);
     --text-color: hsl(var(--hue-color), 10%, 45%);
@@ -377,4 +377,123 @@ img {
 .about_button {
     display: flex;
     justify-content: center;
+}
+
+/* =============== About =============== */
+.skill_continer {
+    row-gap: 0;
+}
+
+.skill_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-2-5);
+    cursor: pointer;
+}
+
+.skill_icon,
+.skill_arrow {
+    color: var(--first-color);
+    font-size: 2rem;
+}
+
+.skill_icon {
+    margin-right: var(--mb-0-75);
+}
+
+.skill_title {
+    font-size: var(--h3-font-size);
+}
+
+.skill_subtitle {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.skill_arrow {
+    margin-left: auto;
+    transition: .4s;
+}
+
+.skill_list {
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
+}
+
+.skill_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill_name,
+.skill_number {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+
+.skill_bar,
+.skill_percentage {
+    height: 5px;
+    border-radius: .25rem;
+}
+
+.skill_bar {
+    background-color: var(--first-color-lighter);
+}
+
+.skill_percentage {
+    display: block;
+    background-color: var(--first-color);
+}
+
+.skill_python,
+.skill_html,
+.skill_arduino {
+    width: 80%;
+}
+
+.skill_java,
+.skill_js {
+    width: 65%;
+}
+
+.skill_cpp,
+.skill_mysql {
+    width: 60%;
+}
+
+.skill_css {
+    width: 75%;
+}
+
+.skill_rjs {
+    width: 45%;
+}
+
+.skill_php,
+.skill_rpi,
+.skill_ai {
+    width: 50%;
+}
+
+.skill_flask {
+    width: 40%;
+}
+
+.skill_django {
+    width: 30%;
+}
+
+.skill_close .skill_list {
+    height: 0;
+    overflow: hidden;
+}
+
+.skill_open .skill_list {
+    height: max-content;
+    margin-bottom: var(--mb-2-5);
+}
+
+.skill_open .skill_arrow {
+    transform: rotate(-180deg);
 }
