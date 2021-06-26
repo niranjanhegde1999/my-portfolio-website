@@ -1,1 +1,1 @@
-# niranjanhegde1999.github.io
+# Niranjan Hegde Portfolio
