@@ -107,7 +107,7 @@ img {
 
 /* =============== Reusable =============== */
 .section {
-    padding: 2rem 0 4rem;
+    padding: 4rem 0 2rem;
 }
 
 .section_title {
@@ -140,10 +140,11 @@ img {
 .header {
     width: 100%;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* =============== NAVS =============== */
@@ -178,10 +179,10 @@ img {
     .nav_menu {
         position: fixed;
         bottom: -100%;
-        right: -100%;
+        left: 0;
         width: 100%;
         background-color: var(--body-color);
-        padding: 2rem 1.5rem 4rem;
+        padding: 2rem 1.5rem 3rem;
         box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
@@ -210,7 +211,7 @@ img {
     font-size: 1.2rem;
 }
 
-.nav_close {
+/* .nav_close {
     position: absolute;
     right: 1.3rem;
     bottom: 0.3rem;
@@ -221,21 +222,20 @@ img {
 
 .nav_close:hover {
     color: var(--first-color-alt);
-}
-
+} */
 .show-menu {
     bottom: 0;
-    right: 0;
 }
 
 /* =============== Home =============== */
+
 .home_container {
     gap: 1rem;
 }
 
 .home_content {
     grid-template-columns: .5fr 3fr;
-    padding-top: 2.5rem;
+    padding-top: 1rem;
     align-items: center;
 }
 

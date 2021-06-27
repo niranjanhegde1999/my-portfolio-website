@@ -1,22 +1,28 @@
 /* ==================== Menu Show ==================== */
 const navToggle = document.getElementById('nav-toggle'),
-    navMenu = document.getElementById('nav-menu'),
-    navClose = document.getElementById('nav-close');
+    navMenu = document.getElementById('nav-menu')
 
-if (navToggle) {
+if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
+        navMenu.classList.toggle('show-menu')
     })
 }
 
-/* ==================== Menu Hide ==================== */
-if (navClose) {
-    navClose.addEventListener('click', () => {
+/* ==================== Hide menu on outside click==================== */
+window.addEventListener('click', (e) => {
+    if (!e.target.matches('.nav_menu') && !e.target.matches('.nav_list') && !e.target.matches('.nav_toggle_icon')) {
+        if (navMenu.classList.contains('show-menu'))
+            navMenu.classList.remove('show-menu')
+    }
+}, true)
+
+/* ==================== Hide menu on scroll==================== */
+window.addEventListener('scroll', () => {
+    if (navMenu.classList.contains('show-menu'))
         navMenu.classList.remove('show-menu')
-    })
-}
+})
 
-/* ==================== Menu Hide Onclick ==================== */
+/* ==================== Hide menu on clicking links ==================== */
 const navLink = document.querySelectorAll('.nav_link')
 
 function linkAction() {
@@ -26,6 +32,7 @@ function linkAction() {
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
+
 
 /* ==================== Accordion Skills ==================== */
 const skillContents = document.getElementsByClassName('skill_content'),
