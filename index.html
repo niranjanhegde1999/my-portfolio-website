@@ -11,6 +11,8 @@
   <!--==================== ICONS ====================-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+  <!--==================== Swiper ====================-->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
   <!--==================== CSS ====================-->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -125,7 +127,7 @@
     </section>
 
     <!--==================== Abot ====================-->
-    <section class="section about" id="about">
+    <section class="about section" id="about">
       <h2 class="section_title">About Me</h2>
       <span class="section_subtitle">My Introduction</span>
 
@@ -303,7 +305,7 @@
       </div>
     </section>
     <!--==================== Skills ====================-->
-    <section class="section skills" id="skills">
+    <section class="skills section" id="skills">
       <h2 class="section_title">Skills</h2>
       <span class="section_subtitle">My Skill Levels</span>
 
@@ -511,7 +513,7 @@
 
           <!--==================== Skill Designer ====================-->
           <div class="skill_content skill_close">
-            <div class="skill_header">
+            <div class="skill_header skill_last">
               <i class="uil uil-swatchbook skill_icon"></i>
               <div>
                 <h1 class="skill_title">Designing</h1>
@@ -537,11 +539,84 @@
     </section>
 
     <!--==================== Projects ====================-->
+    <section class="projects section" id="projects">
+      <h2 class="section_title">Projects</h2>
+      <span class="section_subtitle">Academic and Personal projects</span>
 
+      <div class="project_container">
+        <div class="swiper-button-pre">
+          <i class="uil uil-angle-left-b swiper_project_icon"></i>
+        </div>
+        <div class="project_swiper swiper-container">
+          <div class="swiper-wrapper">
+            <div class="project_content grid swiper-slide">
+              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
+              <div class="project_data">
+                <h3 class="project_title">Project Title</h3>
+                <div class="project_subtitle">
+                  <i class="uil uil-calendar-alt"></i>
+                  2017 - 2021
+                </div>
+                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="project_button">
+                  <div class="button button-flex button-small project_button_arrow">
+                    View More
+                    <i class="uil uil-arrow-right button_icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project_content grid swiper-slide">
+              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
+              <div class="project_data">
+                <h3 class="project_title">Project Title</h3>
+                <div class="project_subtitle">
+                  <i class="uil uil-calendar-alt"></i>
+                  2017 - 2021
+                </div>
+                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="project_button">
+                  <div class="button button-flex button-small project_button_arrow">
+                    View More
+                    <i class="uil uil-arrow-right button_icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project_content grid swiper-slide">
+              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
+              <div class="project_data">
+                <h3 class="project_title">Project Title</h3>
+                <div class="project_subtitle">
+                  <i class="uil uil-calendar-alt"></i>
+                  2017 - 2021
+                </div>
+                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="project_button">
+                  <div class="button button-flex button-small project_button_arrow">
+                    View More
+                    <i class="uil uil-arrow-right button_icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-nxt">
+          <i class="uil uil-angle-right-b swiper_project_icon"></i>
+        </div>
+      </div>
+      <div class="swiper_bullet_container">
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
 
     <!--==================== Contact Me ====================-->
 
   </main>
+
+  <!--==================== Swiper JS ====================-->
+  <script src="assets/js/swiper-bundle.min.js"></script>
 
   <!--==================== MAIN JS ====================-->
   <script src="assets/js/main.js"></script>

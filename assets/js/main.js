@@ -1,6 +1,7 @@
 /* ==================== Menu Show ==================== */
 const navToggle = document.getElementById('nav-toggle'),
-    navMenu = document.getElementById('nav-menu')
+    navMenu = document.getElementById('nav-menu'),
+    header = document.getElementById('header')
 
 if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
@@ -16,8 +17,17 @@ window.addEventListener('click', (e) => {
     }
 }, true)
 
-/* ==================== Hide menu on scroll==================== */
+
 window.addEventListener('scroll', () => {
+    /* ==================== Header Shadow ==================== */
+    /* if (window.pageYOffset > 0) {
+        header.classList.add('header_shadow')
+    } else {
+        if (header.classList.contains('header_shadow'))
+            header.classList.remove('header_shadow')
+    } */
+
+    /* ==================== Hide menu on scroll==================== */
     if (navMenu.classList.contains('show-menu'))
         navMenu.classList.remove('show-menu')
 })
@@ -74,3 +84,18 @@ tabs.forEach(tab => {
         tab.classList.add('qualification_active')
     })
 })
+
+/* ==================== Project Swiper ==================== */
+let swiper = new Swiper(".project_swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-nxt",
+        prevEl: ".swiper-button-pre",
+    },
+});
