@@ -29,7 +29,7 @@
       <div class="nav_menu" id="nav-menu">
         <ul class="nav_list grid">
           <li class="nav_item">
-            <a href="#home" class="nav_link">
+            <a href="#home" class="nav_link active_link">
               <i class="uil uil-estate nav_icon"></i>Home
             </a>
           </li>
@@ -55,14 +55,18 @@
           </li>
           <li class="nav_item">
             <a href="#contact" class="nav_link">
-              <i class="uil uil-message nav_icon"></i>Contact Me
+              <i class="uil uil-message nav_icon"></i>Contact
             </a>
           </li>
         </ul>
       </div>
 
-      <div class="nav_toggle" id="nav-toggle">
-        <i class="uil uil-apps nav_toggle_icon"></i>
+      <div class="nav_btns">
+        <i class="uil uil-moon change_theme" id="theme-button"></i>
+
+        <div class="nav_toggle" id="nav-toggle">
+          <i class="uil uil-apps nav_toggle_icon"></i>
+        </div>
       </div>
 
     </nav>
@@ -82,15 +86,10 @@
             <a href="https://github.com/niranjanhegde1999/" target="_blank" class="home_social_icon">
               <i class="uil uil-github-alt"></i>
             </a>
-            <a href="https://wa.me/+919449730731?text=Hello" target="_blank" class="home_social_icon">
-              <i class="uil uil-whatsapp"></i>
+            <a href="#" class="home_social_icon">
+              <!-- target="_blank" -->
+              <i class="uil uil-globe"></i>
             </a>
-            <a href="https://www.instagram.com/_niranjan._.hegde_/" target="_blank" class="home_social_icon">
-              <i class="uil uil-instagram"></i>
-            </a>
-            <!--  <a href="https://www.facebook.com/niranjanhegde.s/" target="_blank" class="home_social_icon">
-              <i class="uil uil-facebook-f"></i>
-            </a> -->
           </div>
           <div class="home_img">
             <svg class="home_blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +103,7 @@
                 <path
                   d="M41.4,-62.9C54.6,-55.9,66.8,-46,75.1,-32.9C83.3,-19.7,87.5,-3.3,86.4,13.2C85.2,29.7,78.8,46.2,67.6,58C56.5,69.8,40.6,76.9,24.9,78.8C9.2,80.6,-6.3,77.3,-21.2,72.7C-36.2,68.2,-50.7,62.3,-60.2,51.9C-69.6,41.4,-74,26.3,-76.5,10.8C-79,-4.7,-79.8,-20.7,-74.4,-34.6C-69,-48.4,-57.5,-60,-44.1,-66.9C-30.7,-73.7,-15.3,-75.9,-0.6,-74.9C14.1,-73.9,28.2,-69.9,41.4,-62.9Z"
                   transform="translate(100 100)" />
-                <image class="home_blob_image" x="36" y="33" xlink:href="assets/Images/home_image.png" />
+                <image class="home_blob_img" x="36" y="33" xlink:href="assets/Images/home_image.png" />
               </g>
             </svg>
           </div>
@@ -135,19 +134,19 @@
       <span class="section_subtitle">My Introduction</span>
 
       <div class="about_container container grid">
-        <img src="assets/Images/about_image.jpg" alt="" class="about_image">
+        <img src="assets/Images/about_image.jpg" alt="" class="about_img">
         <div class="about_data">
           <p class="about_description">Currently, I am pursuing my final Year B.E. in Information Science from the CMR
             Institute of Technology, Bengaluru. I am good at programming and have strong problem-solving skills. I have
             done multiple projects and dedication is my key strength.</p>
 
           <div class="about_info">
-            <div>
+            <div class="about_info_wrapper">
               <span class="about_info_title">8.10</span>
               <span class="about_info_desc">CGPA</span>
             </div>
 
-            <div>
+            <div class="about_info_wrapper">
               <span class="about_info_title">10+</span>
               <span class="about_info_desc">Completed<br>Projects</span>
             </div>
@@ -576,7 +575,24 @@
             <div class="project_content grid swiper-slide">
               <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
               <div class="project_data">
-                <h3 class="project_title">Project Title 1</h3>
+                <h3 class="project_title">BedaruBombe: IoT Based Automated Scarecrow </h3>
+                <div class="project_subtitle">
+                  <i class="uil uil-calendar-alt"></i>
+                  2021 - Present
+                </div>
+                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="project_button">
+                  <div class="button button-flex button-small project_button_arrow">
+                    View More
+                    <i class="uil uil-arrow-right button_icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project_content grid swiper-slide">
+              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
+              <div class="project_data">
+                <h3 class="project_title">VTU SGPA and CGPA Calculator</h3>
                 <div class="project_subtitle">
                   <i class="uil uil-calendar-alt"></i>
                   2017 - 2021
@@ -593,24 +609,7 @@
             <div class="project_content grid swiper-slide">
               <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
               <div class="project_data">
-                <h3 class="project_title">Project Title 2</h3>
-                <div class="project_subtitle">
-                  <i class="uil uil-calendar-alt"></i>
-                  2017 - 2021
-                </div>
-                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="project_button">
-                  <div class="button button-flex button-small project_button_arrow">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project_content grid swiper-slide">
-              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
-              <div class="project_data">
-                <h3 class="project_title">Project Title 3</h3>
+                <h3 class="project_title">Automatic Night Light for Temple Shikhara</h3>
                 <div class="project_subtitle">
                   <i class="uil uil-calendar-alt"></i>
                   2017 - 2021
@@ -709,6 +708,65 @@
       </div>
     </section>
   </main>
+
+  <!--==================== Footer ====================-->
+  <footer class="footer">
+    <div class="footer_bg">
+      <div class="footer_container container grid">
+        <div>
+          <h1 class="footer_title">Niranjan Hegde</h1>
+          <span class="footer_subtitle">Student Developer</span>
+        </div>
+
+        <ul class="footer_links_list">
+          <li>
+            <a href="#about" class="footer_link">About</a>
+          </li>
+
+          <li>
+            <a href="#qualification" class="footer_link">Qualification</a>
+          </li>
+
+          <li>
+            <a href="#skills" class="footer_link">Skills</a>
+          </li>
+
+          <li>
+            <a href="#projects" class="footer_link">Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="footer_link">Contact Me</a>
+          </li>
+        </ul>
+
+        <div class="footer_socials">
+          <a href="https://wa.me/+919449730731?text=Hello" target="_blank" class="footer_social">
+            <i class="uil uil-whatsapp"></i>
+          </a>
+
+          <a href="https://www.instagram.com/_niranjan._.hegde_/" target="_blank" class="footer_social">
+            <i class="uil uil-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/niranjanhegde.s/" target="_blank" class="footer_social">
+            <i class="uil uil-facebook-f"></i>
+          </a>
+
+          <a href="https://www.snapchat.com/add/niranjan.hegde" target="_blank" class="footer_social">
+            <i class="uil uil-snapchat-alt"></i>
+          </a>
+
+        </div>
+      </div>
+      <p class="footer_copyright">&#169; Niranjan Hegde. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!--==================== Scroll Top ====================-->
+  <a href="#" class="scroll_up" id="scroll-up">
+    <i class="uil uil-arrow-up scroll_up_arrow"></i>
+  </a>
 
   <!--==================== Swiper JS ====================-->
   <script src="assets/js/swiper-bundle.min.js"></script>
