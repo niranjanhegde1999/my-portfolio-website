@@ -62,7 +62,7 @@
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
     :root {
-        --big-font-size: 3rem;
+        --big-font-size: 2.9rem;
         --h1-font-size: 2.25rem;
         --h2-font-size: 1.5rem;
         --h3-font-size: 1.25rem;
@@ -87,6 +87,10 @@ body.dark-theme {
     --scroll-bar-color: hsl(var(--hue-color), 10%, 8%);
     --scroll-thumb-color: hsl(var(--hue-color), 60%, 18%);
     --scroll-thumb-color-alt: hsl(var(--hue-color), 90%, 18%);
+}
+
+.favicon {
+    fill: var(--first-color) !important;
 }
 
 
@@ -343,6 +347,9 @@ button {
     color: var(--first-color-alt);
 }
 
+.home_img {
+    justify-self: center;
+}
 
 .home_blob {
     position: relative;
@@ -852,10 +859,6 @@ button {
     padding-top: 2rem;
 }
 
-.footer_container {
-    row-gap: 3.5rem;
-}
-
 .footer_bg {
     background-color: var(--first-color-second);
     padding: 2rem 0 3rem;
@@ -1002,7 +1005,7 @@ button {
 
 
 /* Media Queries for Medium Devices */
-@media screen and (min-width: 528px) {
+@media screen and (min-width: 568px) {
     .home_content {
         grid-template-columns: max-content 1fr 1fr;
     }
@@ -1013,7 +1016,6 @@ button {
 
     .home_img {
         order: 1;
-        justify-self: center;
     }
 
     .home_blob {
@@ -1108,6 +1110,7 @@ button {
 
     .change_theme {
         margin: 0;
+        margin-left: 1rem;
     }
 
     .home_container {
@@ -1163,8 +1166,6 @@ button {
         margin: 0 var(--mb-1);
     }
 
-
-
     .new_project {
         text-align: initial;
     }
@@ -1189,7 +1190,62 @@ button {
         height: 240px;
     }
 
+    .footer_container {
+        column-gap: 5rem;
+    }
+
     .footer_socials {
         left: 18px
     }
+
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .header,
+    .main,
+    .footer_container {
+        padding: 0;
+    }
+
+    .home_blob {
+        width: 320px;
+    }
+
+    .home_social {
+        transform: translateX(-6rem);
+    }
+
+    .new_project {
+        display: flex;
+        justify-content: center;
+    }
+
+    .new_project_bg {
+        width: 980px;
+        justify-self: center;
+    }
+
+
+    .project_content {
+        column-gap: 4rem;
+    }
+
+    .swiper_project_icon {
+        font-size: 2.5rem;
+    }
+
+    .swiper-button-pre {
+        left: -3.5rem;
+    }
+
+    .swiper-button-nxt {
+        right: -3.5rem
+    }
+
+    .footer_container {
+        column-gap: 10rem;
+    }
+
 }

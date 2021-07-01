@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Niranjan Hegde</title>
+  <link rel="icon" href="assets/Images/NH_favicon.svg">
 
   <!--==================== ICONS ====================-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -637,7 +638,7 @@
 
     <!--==================== Contact Me ====================-->
     <section class="contact section" id="contact">
-      <h2 class="section_title">Contact Me</h2>
+      <h2 class="section_title">Contact</h2>
       <span class="section_subtitle">Get in touch</span>
 
       <div class="contact_container container grid">
@@ -670,41 +671,42 @@
             </div>
           </div>
         </div>
+        <div>
+          <form action="https://send.pageclip.co/BJMX5d8poGvO37WjjVoJCL96vdUVeqCN/contact-form"
+            class="contact_form pageclip-form grid" method="POST">
+            <div class="contact_inputs grid">
+              <div class="contact_content">
+                <label for="fullname" class="contact_label">Full Name</label>
+                <input type="text" class="contact_input" name="full_name" placeholder="Enter your name" required>
+              </div>
 
-        <form action="#" class="contact_form pageclip-form grid" method="POST">
-          <div class="contact_inputs grid">
-            <div class="contact_content">
-              <label for="fullname" class="contact_label">Full Name</label>
-              <input type="text" class="contact_input" name="full_name" placeholder="Enter your name" required>
+              <div class="contact_content">
+                <label for="email" class="contact_label">Email</label>
+                <input type="email" class="contact_input" name="email" placeholder="Enter your email" required>
+              </div>
+
+              <div class="contact_content">
+                <label for="phone" class="contact_label">Phone Number</label>
+                <input type="tel" class="contact_input" name="phone" minlength="10" maxlength="11"
+                  placeholder="Enter your phone number" required>
+              </div>
+
+              <div class="contact_content">
+                <label for="message" class="contact_label">Message</label>
+                <textarea rows="8" class="contact_input" name="message" placeholder="Type a message here..."
+                  required></textarea>
+              </div>
+
+              <div class="submit_button">
+                <button class="button button-flex pageclip-form__submit" type="submit">
+                  <span>
+                    <p>Send Message</p><i class="uil uil-message button_icon"></i>
+                  </span>
+                </button>
+              </div>
             </div>
-
-            <div class="contact_content">
-              <label for="email" class="contact_label">Email</label>
-              <input type="email" class="contact_input" name="email" placeholder="Enter your email" required>
-            </div>
-
-            <div class="contact_content">
-              <label for="phone" class="contact_label">Phone Number</label>
-              <input type="tel" class="contact_input" name="phone" minlength="10" maxlength="11"
-                placeholder="Enter your phone number" required>
-            </div>
-
-            <div class="contact_content">
-              <label for="message" class="contact_label">Message</label>
-              <textarea rows="8" class="contact_input" name="message" placeholder="Type a message here..."
-                required></textarea>
-            </div>
-
-            <div class="submit_button">
-              <button class="button button-flex pageclip-form__submit" type="submit">
-                <span>
-                  <p>Send Message</p><i class="uil uil-message button_icon"></i>
-                </span>
-              </button>
-            </div>
-          </div>
-
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -736,7 +738,7 @@
           </li>
 
           <li>
-            <a href="#contact" class="footer_link">Contact Me</a>
+            <a href="#contact" class="footer_link">Contact</a>
           </li>
         </ul>
 
