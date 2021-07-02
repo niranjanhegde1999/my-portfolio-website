@@ -166,13 +166,21 @@ themeButton.addEventListener('click', () => {
 const contactFormName = document.getElementById('name'),
     contactFormPhone = document.getElementById('phone')
 
-contactFormName.addEventListener('keypress', (e) => {
-    e.preventDefault()
+let previousValue = contactFormName.value
 
-    let key_ = e.key;
+contactFormName.addEventListener('input', (e) => {
+    console.log(e)
+    let key_ = e.data;
 
-    if ((key_ >= 'a' && key_ <= 'z') || (key_ >= 'A' && key_ <= 'Z') || key_ == ' ')
-        contactFormName.value += key_
+    if (e.inputType === 'insertText') {
+        contactFormName.value = ''
+        if ((key_ >= 'a' && key_ <= 'z') || (key_ >= 'A' && key_ <= 'Z') || key_ == ' ') {
+            previousValue += key_
+        }
+        contactFormName.value = previousValue
+    } else if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward' || e.inputType === 'deleteByCut') {
+        previousValue = contactFormName.value
+    }
 })
 
 contactFormPhone.addEventListener('keypress', (e) => {
