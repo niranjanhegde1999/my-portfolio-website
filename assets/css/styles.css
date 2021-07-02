@@ -684,7 +684,7 @@ button {
 
 .new_project_img {
     width: 232px;
-    align-self: center;
+    align-self: baseline;
     justify-self: center;
 }
 
@@ -851,6 +851,14 @@ button {
 .submit_button>button>span {
     display: flex;
     align-items: center;
+}
+
+.pageclip-form__success {
+    background: hsla(219, 40%, 90%, .8);
+}
+
+.pageclip-form__success__message {
+    color: var(--first-color-alt-second);
 }
 
 /* =============== Contact =============== */
@@ -1227,6 +1235,11 @@ button {
         justify-self: center;
     }
 
+    .new_project_container {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
 
     .project_content {
         column-gap: 4rem;
@@ -1246,6 +1259,10 @@ button {
 
     .footer_container {
         column-gap: 10rem;
+    }
+
+    .footer_socials {
+        left: 0;
     }
 
 }

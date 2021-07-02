@@ -131,7 +131,7 @@
 
     <!--==================== Abot ====================-->
     <section class="about section" id="about">
-      <h2 class="section_title">About Me</h2>
+      <h2 class="section_title">About</h2>
       <span class="section_subtitle">My Introduction</span>
 
       <div class="about_container container grid">
@@ -139,7 +139,7 @@
         <div class="about_data">
           <p class="about_description">Currently, I am pursuing my final Year B.E. in Information Science from the CMR
             Institute of Technology, Bengaluru. I am good at programming and have strong problem-solving skills. I have
-            done multiple projects and dedication is my key strength.</p>
+            done multiple projects throughout my journey. Dedication is my key strength.</p>
 
           <div class="about_info">
             <div class="about_info_wrapper">
@@ -368,7 +368,7 @@
               <i class="uil uil-arrow skill_icon"></i>
               <div>
                 <h1 class="skill_title">Frontend Development</h1>
-                <span class="skill_subtitle">More than 1 year</span>
+                <span class="skill_subtitle">More than 2 year</span>
               </div>
               <i class="uil uil-angle-down skill_arrow"></i>
             </div>
@@ -421,7 +421,7 @@
               <i class="uil uil-server-network skill_icon"></i>
               <div>
                 <h1 class="skill_title">Backend Development</h1>
-                <span class="skill_subtitle">More than 1 year</span>
+                <span class="skill_subtitle">More than 2 year</span>
               </div>
               <i class="uil uil-angle-down skill_arrow"></i>
             </div>
@@ -543,7 +543,6 @@
         </div>
       </div>
     </section>
-
 
     <!--==================== Projects In Mind? ====================-->
     <section class="new_project section">
@@ -676,27 +675,27 @@
             class="contact_form pageclip-form grid" method="POST">
             <div class="contact_inputs grid">
               <div class="contact_content">
-                <label for="fullname" class="contact_label">Full Name</label>
-                <input type="text" class="contact_input" name="full_name" placeholder="Enter your name" required>
+                <label for="fullname" class="contact_label">Full Name*</label>
+                <input type="text" class="contact_input" name="name" id="name" placeholder="Enter your name">
               </div>
 
               <div class="contact_content">
-                <label for="email" class="contact_label">Email</label>
-                <input type="email" class="contact_input" name="email" placeholder="Enter your email" required>
+                <label for="email" class="contact_label">Email*</label>
+                <input type="email" class="contact_input" name="email" id="email" placeholder="Enter your email"
+                  required>
               </div>
 
               <div class="contact_content">
-                <label for="phone" class="contact_label">Phone Number</label>
-                <input type="tel" class="contact_input" name="phone" minlength="10" maxlength="11"
-                  placeholder="Enter your phone number" required>
+                <label for="phone" class="contact_label">Phone Number*</label>
+                <input type="tel" class="contact_input" name="phone" id="phone" placeholder="Enter your phone number">
               </div>
 
               <div class="contact_content">
-                <label for="message" class="contact_label">Message</label>
-                <textarea rows="8" class="contact_input" name="message" placeholder="Type a message here..."
-                  required></textarea>
+                <label for="message" class="contact_label">Message*</label>
+                <textarea rows="8" class="contact_input" name="message" placeholder="Type a message here..."></textarea>
               </div>
 
+              <p>* required field</p>
               <div class="submit_button">
                 <button class="button button-flex pageclip-form__submit" type="submit">
                   <span>
@@ -762,6 +761,7 @@
         </div>
       </div>
       <p class="footer_copyright">&#169; Niranjan Hegde. All Rights Reserved</p>
+      <img src="https://visitor-badge.glitch.me/badge?page_id=$(niranjan-hegde.me)" alt="visitor badge" />
     </div>
   </footer>
 

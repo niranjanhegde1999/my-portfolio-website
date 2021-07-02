@@ -159,3 +159,27 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+/*==================== Form Control ====================*/
+
+const contactFormName = document.getElementById('name'),
+    contactFormPhone = document.getElementById('phone')
+
+contactFormName.addEventListener('keypress', (e) => {
+    e.preventDefault()
+
+    let key_ = e.key;
+
+    if ((key_ >= 'a' && key_ <= 'z') || (key_ >= 'A' && key_ <= 'Z') || key_ == ' ')
+        contactFormName.value += key_
+})
+
+contactFormPhone.addEventListener('keypress', (e) => {
+    e.preventDefault()
+
+    let key_ = e.key;
+
+    if ((key_ >= '0' && key_ <= '9'))
+        contactFormPhone.value += key_
+})
