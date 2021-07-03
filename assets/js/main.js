@@ -164,30 +164,175 @@ themeButton.addEventListener('click', () => {
 /*==================== Form Control ====================*/
 
 const contactFormName = document.getElementById('name'),
-    contactFormPhone = document.getElementById('phone')
+    contactFormPhone = document.getElementById('phone'),
+    namePattern = new RegExp("^[A-Za-z ']+$"),
+    phonePattern = new RegExp("^[0-9]+$")
 
-let previousValue = contactFormName.value
+let previousNameValue = '',
+    previousPhoneValue = ''
 
 contactFormName.addEventListener('input', (e) => {
-    console.log(e)
-    let key_ = e.data;
+    let currentNameValue = contactFormName.value
 
-    if (e.inputType === 'insertText') {
-        contactFormName.value = ''
-        if ((key_ >= 'a' && key_ <= 'z') || (key_ >= 'A' && key_ <= 'Z') || key_ == ' ') {
-            previousValue += key_
-        }
-        contactFormName.value = previousValue
-    } else if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward' || e.inputType === 'deleteByCut') {
-        previousValue = contactFormName.value
+    if (e.inputType.includes('delete') || namePattern.test(currentNameValue)) {
+        previousNameValue = currentNameValue
+    }
+
+    contactFormName.value = previousNameValue
+})
+
+contactFormPhone.addEventListener('input', (e) => {
+    let currentPhoneValue = contactFormPhone.value
+
+    if (e.inputType.includes('delete')) {
+        previousPhoneValue = currentPhoneValue
+    } else if (previousPhoneValue.length < 10) {
+        if (phonePattern.test(currentPhoneValue))
+            previousPhoneValue = currentPhoneValue
+    }
+
+    contactFormPhone.value = previousPhoneValue
+})
+
+
+let isEmpty = (inputField) => {
+    if (inputField.value.trim() === '')
+        return true
+
+    return false
+}
+
+
+let showError = (inputField, errorMsg) => {
+    const inputFieldParent = inputField.parentNode
+
+    if (!inputFieldParent.classList.contains('input_error')) {
+        let errorDiv = document.createElement('div')
+
+        errorDiv.setAttribute('class', 'error_msg')
+        errorDiv.textContent = errorMsg
+
+        inputFieldParent.classList.add('input_error')
+
+        inputFieldParent.insertAdjacentElement('afterend', errorDiv);
+    } else {
+        inputFieldParent.nextElementSibling.textContent = errorMsg
+    }
+}
+
+let removeError = (inputField) => {
+    const inputFieldParent = inputField.parentNode
+
+    if (inputFieldParent.classList.contains('input_error')) {
+        inputFieldParent.classList.remove('input_error')
+
+        inputFieldParent.nextElementSibling.remove()
+    }
+}
+
+
+const inputName = document.getElementById('name'),
+    inputEmail = document.getElementById('email'),
+    inputPhone = document.getElementById('phone'),
+    inputMsg = document.getElementById('message')
+
+let emptyErrorMsg = ' is required'
+
+let validateName = () => {
+    if (isEmpty(inputName)) {
+        showError(inputName, 'Name' + emptyErrorMsg)
+        return false
+    }
+
+    return true
+}
+
+let validateEmail = () => {
+    if (isEmpty(inputEmail)) {
+        showError(inputEmail, 'Email' + emptyErrorMsg)
+        return false
+    }
+
+    let emailFormat = /^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-z]+)+$/
+
+    if (!emailFormat.test(inputEmail.value.trim())) {
+        showError(inputEmail, 'Invalid Email')
+        return false
+    }
+
+    return true
+}
+
+let validatePhone = () => {
+    if (isEmpty(inputPhone)) {
+        showError(inputPhone, 'Phone Number' + emptyErrorMsg)
+        return false
+    }
+
+    if (inputPhone.value.trim().length < 10) {
+        showError(inputPhone, 'Invalid Phone Number')
+        return false
+    }
+
+    return true
+}
+
+
+let validateMessage = () => {
+    if (isEmpty(inputMsg)) {
+        showError(inputMsg, 'Message' + emptyErrorMsg)
+        return false
+    }
+    return true
+}
+
+
+inputName.addEventListener('focusout', () => {
+    if (validateName()) {
+        removeError(inputName)
     }
 })
 
-contactFormPhone.addEventListener('keypress', (e) => {
-    e.preventDefault()
+inputEmail.addEventListener('focusout', () => {
+    if (validateEmail()) {
+        removeError(inputEmail)
+    }
+})
 
-    let key_ = e.key;
+inputPhone.addEventListener('focusout', () => {
+    if (validatePhone()) {
+        removeError(inputPhone)
+    }
+})
 
-    if ((key_ >= '0' && key_ <= '9'))
-        contactFormPhone.value += key_
+inputMsg.addEventListener('focusout', () => {
+    if (validateMessage()) {
+        removeError(inputMsg)
+    }
+})
+
+
+
+function validateForm() {
+    let isValidName = validateName()
+    let isValidEmail = validateEmail()
+    let isValidPhone = validatePhone()
+    let isValidMsg = validateMessage()
+
+    if (isValidName && isValidEmail && isValidPhone && isValidMsg) {
+        return true
+    }
+    return false
+}
+
+
+
+var form = document.querySelector('.pageclip-form')
+
+Pageclip.form(form, {
+    onSubmit: validateForm,
+    onResponse: function (error, response) {
+        console.log(error)
+        console.log(response)
+    }
 })

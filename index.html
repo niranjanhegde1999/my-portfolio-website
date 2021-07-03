@@ -15,8 +15,6 @@
   <!--==================== Swiper CSS ====================-->
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-  <!--==================== Pageclip CSS ====================-->
-  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
 
   <!--==================== CSS ====================-->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -672,35 +670,41 @@
         </div>
         <div>
           <form action="https://send.pageclip.co/BJMX5d8poGvO37WjjVoJCL96vdUVeqCN/contact-form"
-            class="contact_form pageclip-form grid" method="POST">
+            class="contact_form pageclip-form grid" method="POST" id="contact-form">
             <div class="contact_inputs grid">
-              <div class="contact_content">
-                <label for="fullname" class="contact_label">Full Name*</label>
-                <input type="text" class="contact_input" name="name" id="name" placeholder="Enter your name">
+              <div class="input_wrapper">
+                <div class="contact_content">
+                  <label for="fullname" class="contact_label">Full Name <span>*</span></label>
+                  <input type="text" class="contact_input" name="name" id="name" placeholder="Enter your name">
+                </div>
               </div>
 
-              <div class="contact_content">
-                <label for="email" class="contact_label">Email*</label>
-                <input type="email" class="contact_input" name="email" id="email" placeholder="Enter your email"
-                  required>
+              <div class="input_wrapper">
+                <div class="contact_content">
+                  <label for="email" class="contact_label">Email <span>*</span></label>
+                  <input type="email" class="contact_input" name="email" id="email" placeholder="Enter your email">
+                </div>
               </div>
 
-              <div class="contact_content">
-                <label for="phone" class="contact_label">Phone Number*</label>
-                <input type="tel" class="contact_input" name="phone" id="phone" placeholder="Enter your phone number">
+              <div class="input_wrapper">
+                <div class="contact_content">
+                  <label for="phone" class="contact_label">Phone Number <span>*</span></label>
+                  <input type="tel" class="contact_input" name="phone" id="phone" placeholder="Enter your phone number">
+                </div>
+              </div>
+              <div class="input_wrapper">
+                <div class="contact_content">
+                  <label for="message" class="contact_label">Message <span>*</span></label>
+                  <textarea rows="8" class="contact_input" name="message" id="message"
+                    placeholder="Type a message here..."></textarea>
+                </div>
               </div>
 
-              <div class="contact_content">
-                <label for="message" class="contact_label">Message*</label>
-                <textarea rows="8" class="contact_input" name="message" placeholder="Type a message here..."></textarea>
-              </div>
+              <p><span>*</span> Required</p>
 
-              <p>* required field</p>
               <div class="submit_button">
-                <button class="button button-flex pageclip-form__submit" type="submit">
-                  <span>
-                    <p>Send Message</p><i class="uil uil-message button_icon"></i>
-                  </span>
+                <button class="button button-flex" type="submit" id="submit-button">
+                  Send Message<i class="uil uil-message button_icon"></i>
                 </button>
               </div>
             </div>
@@ -761,7 +765,8 @@
         </div>
       </div>
       <p class="footer_copyright">&#169; Niranjan Hegde. All Rights Reserved</p>
-      <img src="https://visitor-badge.glitch.me/badge?page_id=$(niranjan-hegde.me)" alt="visitor badge" />
+      <img src="https://visitor-badge.glitch.me/badge?page_id=$(niranjan-hegde.me)" alt="visitor badge"
+        style="display: none;" />
     </div>
   </footer>
 
