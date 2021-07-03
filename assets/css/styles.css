@@ -24,6 +24,9 @@
     --scroll-bar-color: hsl(var(--hue-color), 10%, 92%);
     --scroll-thumb-color: hsl(var(--hue-color), 98%, 86%);
     --scroll-thumb-color-alt: hsl(var(--hue-color), 98%, 80%);
+    --error-bg-color: #ffcbd0;
+    --error-border-color: #ae0000;
+    --input-error-color: red;
 
     /* =============== Fonts =============== */
     --body-font: 'Kanit', sans-serif;
@@ -87,12 +90,10 @@ body.dark-theme {
     --scroll-bar-color: hsl(var(--hue-color), 10%, 8%);
     --scroll-thumb-color: hsl(var(--hue-color), 60%, 18%);
     --scroll-thumb-color-alt: hsl(var(--hue-color), 90%, 18%);
+    --error-bg-color: #784c50;
+    --error-border-color: #8f0000;
+    --input-error-color: #cf0303;
 }
-
-.favicon {
-    fill: var(--first-color) !important;
-}
-
 
 /* =============== BASE =============== */
 * {
@@ -829,15 +830,15 @@ button {
 
 .contact_label>span,
 .contact_inputs>p>span {
-    color: rgb(201, 0, 0);
+    color: var(--input-error-color);
 }
 
 .input_error {
-    border: 1px solid red;
+    border: 1px solid var(--input-error-color);
 }
 
 .error_msg {
-    color: red;
+    color: var(--input-error-color);
     font-size: var(--smaller-font-size);
 }
 
@@ -857,7 +858,14 @@ button {
 }
 
 .submit_button {
+    display: flex;
+    justify-content: left;
     margin-top: var(--mb-0-5);
+}
+
+.submit_button>button>span {
+    display: flex;
+    align-items: center;
 }
 
 .pageclip-form__success {
@@ -868,12 +876,31 @@ button {
     color: var(--first-color-alt-second);
 }
 
+#submit-button {
+    position: relative;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.error_data_submission {
+    background-color: var(--error-bg-color);
+    border-left: .25rem solid var(--error-border-color);
+    font-size: var(--normal-font-size);
+    padding: .75rem 1rem;
+    color: var(--title-color)
+}
+
 .submit_loader {
-    border: 5px solid #f3f3f3;
+    position: absolute;
+    top: 30%;
+    left: 41%;
+    border: 3px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 5px solid #3498db;
-    width: 16px;
-    height: 16px;
+    border-top: 3px solid var(--text-color);
+    width: 25px;
+    height: 25px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }

@@ -171,6 +171,8 @@ const contactFormName = document.getElementById('name'),
 let previousNameValue = '',
     previousPhoneValue = ''
 
+
+/*==================== Restrict Input to for Alphabets Only====================*/
 contactFormName.addEventListener('input', (e) => {
     let currentNameValue = contactFormName.value
 
@@ -181,6 +183,8 @@ contactFormName.addEventListener('input', (e) => {
     contactFormName.value = previousNameValue
 })
 
+
+/*==================== Restrict Input to for Numbers Only ====================*/
 contactFormPhone.addEventListener('input', (e) => {
     let currentPhoneValue = contactFormPhone.value
 
@@ -195,6 +199,7 @@ contactFormPhone.addEventListener('input', (e) => {
 })
 
 
+/*==================== Check Input Field for Empty Content ====================*/
 let isEmpty = (inputField) => {
     if (inputField.value.trim() === '')
         return true
@@ -202,7 +207,7 @@ let isEmpty = (inputField) => {
     return false
 }
 
-
+/*==================== Display Errors ====================*/
 let showError = (inputField, errorMsg) => {
     const inputFieldParent = inputField.parentNode
 
@@ -220,6 +225,8 @@ let showError = (inputField, errorMsg) => {
     }
 }
 
+
+/*==================== Remove Errors ====================*/
 let removeError = (inputField) => {
     const inputFieldParent = inputField.parentNode
 
@@ -238,6 +245,7 @@ const inputName = document.getElementById('name'),
 
 let emptyErrorMsg = ' is required'
 
+/*==================== Validate Name ====================*/
 let validateName = () => {
     if (isEmpty(inputName)) {
         showError(inputName, 'Name' + emptyErrorMsg)
@@ -247,6 +255,7 @@ let validateName = () => {
     return true
 }
 
+/*==================== Validate Email ====================*/
 let validateEmail = () => {
     if (isEmpty(inputEmail)) {
         showError(inputEmail, 'Email' + emptyErrorMsg)
@@ -263,6 +272,7 @@ let validateEmail = () => {
     return true
 }
 
+/*==================== Validate Phone ====================*/
 let validatePhone = () => {
     if (isEmpty(inputPhone)) {
         showError(inputPhone, 'Phone Number' + emptyErrorMsg)
@@ -278,6 +288,7 @@ let validatePhone = () => {
 }
 
 
+/*==================== Validate Message ====================*/
 let validateMessage = () => {
     if (isEmpty(inputMsg)) {
         showError(inputMsg, 'Message' + emptyErrorMsg)
@@ -312,8 +323,33 @@ inputMsg.addEventListener('focusout', () => {
 })
 
 
+const submitBtn = document.getElementById('submit-button'),
+    submitBtnContent = document.querySelector('#submit-button>span')
+
+let addSubmitLoader = () => {
+    if (!submitBtn.classList.contains('disabled')) {
+        submitBtn.classList.add('disabled')
+        submitBtnContent.style.opacity = 0
+
+        let loaderElement = document.createElement('div')
+        loaderElement.className = 'submit_loader'
+        submitBtn.appendChild(loaderElement)
+    }
+}
+
+let removeSubmitLoader = () => {
+    if (submitBtn.classList.contains('disabled')) {
+        let submitLoader = document.querySelector('.submit_loader')
+        submitLoader.remove()
+
+        submitBtn.classList.remove('disabled')
+        submitBtnContent.style.opacity = 100
+    }
+}
 
 function validateForm() {
+    addSubmitLoader()
+
     let isValidName = validateName()
     let isValidEmail = validateEmail()
     let isValidPhone = validatePhone()
@@ -321,10 +357,30 @@ function validateForm() {
 
     if (isValidName && isValidEmail && isValidPhone && isValidMsg) {
         return true
+    } else {
+        setTimeout(removeSubmitLoader, 50)
+        return false
     }
-    return false
 }
 
+const contactForm = document.getElementById('contact-form')
+
+let showDataSubmissionError = () => {
+
+    if (contactForm.firstChild.className !== 'error_data_submission') {
+        let submissionErrorElement = document.createElement('div')
+        submissionErrorElement.className = 'error_data_submission'
+        submissionErrorElement.innerHTML = '<i class="uil uil-exclamation-triangle"></i>&nbsp;&nbsp;Something Went Wrong on Submission. &nbsp;Please Retry later'
+
+        contactForm.prepend(submissionErrorElement)
+    }
+}
+
+let removeDataSubmissionError = () => {
+    if (contactForm.firstChild.className === 'error_data_submission') {
+        contactForm.firstChild.remove()
+    }
+}
 
 
 var form = document.querySelector('.pageclip-form')
@@ -332,7 +388,11 @@ var form = document.querySelector('.pageclip-form')
 Pageclip.form(form, {
     onSubmit: validateForm,
     onResponse: function (error, response) {
-        console.log(error)
-        console.log(response)
+        removeSubmitLoader()
+
+        if (error) {
+            showDataSubmissionError()
+            setTimeout(removeDataSubmissionError, 5000)
+        }
     }
 })
