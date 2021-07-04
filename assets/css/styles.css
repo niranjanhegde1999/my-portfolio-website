@@ -27,6 +27,8 @@
     --error-bg-color: #ffcbd0;
     --error-border-color: #ae0000;
     --input-error-color: red;
+    --success-bg-color: #dcffa6;
+    --success-border-color: #15c33b;
 
     /* =============== Fonts =============== */
     --body-font: 'Kanit', sans-serif;
@@ -93,6 +95,8 @@ body.dark-theme {
     --error-bg-color: #784c50;
     --error-border-color: #8f0000;
     --input-error-color: #cf0303;
+    --success-bg-color: #3f6800;
+    --success-border-color: #00ac13;
 }
 
 /* =============== BASE =============== */
@@ -884,12 +888,22 @@ button {
     pointer-events: none;
 }
 
-.error_data_submission {
-    background-color: var(--error-bg-color);
-    border-left: .25rem solid var(--error-border-color);
+.error_data_submission,
+.success_data_submission {
+    border-left: .25rem solid;
     font-size: var(--normal-font-size);
     padding: .75rem 1rem;
     color: var(--title-color)
+}
+
+.error_data_submission {
+    background-color: var(--error-bg-color);
+    border-left-color: var(--error-border-color);
+}
+
+.success_data_submission {
+    background-color: var(--success-bg-color);
+    border-left-color: var(--success-border-color);
 }
 
 .submit_loader {

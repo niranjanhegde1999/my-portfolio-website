@@ -363,22 +363,35 @@ function validateForm() {
     }
 }
 
-const contactForm = document.getElementById('contact-form')
+const contactForm = document.getElementById('contact-form'),
+    errorAlert = '<i class="uil uil-exclamation-triangle"></i>&nbsp;&nbsp;Something Went Wrong for Submission. &nbsp;Please Retry',
+    successAlert = '<i class="uil uil-check"></i>&nbsp;&nbsp;Thank you! &nbsp;Form Submited Successfully'
 
-let showDataSubmissionError = () => {
+let showDataSubmissionAlert = (alertType) => {
+    let alertElement = document.getElementById('alert')
 
-    if (contactForm.firstChild.className !== 'error_data_submission') {
-        let submissionErrorElement = document.createElement('div')
-        submissionErrorElement.className = 'error_data_submission'
-        submissionErrorElement.innerHTML = '<i class="uil uil-exclamation-triangle"></i>&nbsp;&nbsp;Something Went Wrong on Submission. &nbsp;Please Retry later'
-
-        contactForm.prepend(submissionErrorElement)
+    if (!alertElement) {
+        alertElement = document.createElement('div')
+        alertElement.id = 'alert'
+        contactForm.prepend(alertElement)
     }
+
+    if (alertType === 'error') {
+        alertElement.className = 'error_data_submission'
+        alertElement.innerHTML = errorAlert
+    } else if (alertType === 'success') {
+        alertElement.className = 'success_data_submission'
+        alertElement.innerHTML = successAlert
+    }
+
+    alertElement.addEventListener('click', removeDataSubmissionAlert)
 }
 
-let removeDataSubmissionError = () => {
-    if (contactForm.firstChild.className === 'error_data_submission') {
-        contactForm.firstChild.remove()
+
+let removeDataSubmissionAlert = () => {
+    let alertElement = document.getElementById('alert')
+    if (alertElement) {
+        alertElement.remove()
     }
 }
 
@@ -391,8 +404,15 @@ Pageclip.form(form, {
         removeSubmitLoader()
 
         if (error) {
-            showDataSubmissionError()
-            setTimeout(removeDataSubmissionError, 5000)
+            showDataSubmissionAlert('success')
         }
+
+        if (response) {
+            let responseData = JSON.parse(response)
+            if (responseData['data'] === 'ok') {
+                showDataSubmissionAlert('success')
+            }
+        }
+        return false
     }
 })
