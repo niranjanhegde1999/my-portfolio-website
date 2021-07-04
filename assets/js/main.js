@@ -382,6 +382,7 @@ let showDataSubmissionAlert = (alertType) => {
     } else if (alertType === 'success') {
         alertElement.className = 'success_data_submission'
         alertElement.innerHTML = successAlert
+        contactForm.reset()
     }
 
     alertElement.addEventListener('click', removeDataSubmissionAlert)
