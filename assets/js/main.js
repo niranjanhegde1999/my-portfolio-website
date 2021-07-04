@@ -405,13 +405,15 @@ Pageclip.form(form, {
         removeSubmitLoader()
 
         if (error) {
-            showDataSubmissionAlert('success')
+            showDataSubmissionAlert('error')
+            setTimeout(removeDataSubmissionAlert, 60000)
         }
 
         if (response) {
             let responseData = JSON.parse(response)
             if (responseData['data'] === 'ok') {
                 showDataSubmissionAlert('success')
+                setTimeout(removeDataSubmissionAlert, 30000)
             }
         }
         return false
