@@ -562,78 +562,72 @@
 
 
     <!--==================== Projects ====================-->
-    <section class="project section" id="projects">
+    <section class="projects section" id="projects">
       <h2 class="section_title">Projects</h2>
-      <span class="section_subtitle">Academic and Personal projects</span>
+      <span class="section_subtitle">Academic and Personal Projects</span>
 
-      <div class="project_container container">
-        <div class="swiper-button-pre">
-          <i class="uil uil-angle-left-b swiper_project_icon"></i>
-        </div>
-        <div class="project_swiper swiper-container">
-          <div class="swiper-wrapper">
-            <div class="project_content grid swiper-slide">
-              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
-              <div class="project_data">
-                <h3 class="project_title">BedaruBombe: IoT Based Automated Scarecrow </h3>
-                <div class="project_subtitle">
-                  <i class="uil uil-calendar-alt"></i>
-                  2021 - Present
-                </div>
-                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="project_button">
-                  <div class="button button-flex button-small project_button_arrow">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project_content grid swiper-slide">
-              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
-              <div class="project_data">
-                <h3 class="project_title">VTU SGPA and CGPA Calculator</h3>
-                <div class="project_subtitle">
-                  <i class="uil uil-calendar-alt"></i>
-                  2017 - 2021
-                </div>
-                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="project_button">
-                  <div class="button button-flex button-small project_button_arrow">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project_content grid swiper-slide">
-              <img src="https://dummyimage.com/400X300/858585/000000&text=Project+Image" alt="" class="project_img">
-              <div class="project_data">
-                <h3 class="project_title">Automatic Night Light for Temple Shikhara</h3>
-                <div class="project_subtitle">
-                  <i class="uil uil-calendar-alt"></i>
-                  2017 - 2021
-                </div>
-                <p class="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <div class="project_button">
-                  <div class="button button-flex button-small project_button_arrow">
-                    View More
-                    <i class="uil uil-arrow-right button_icon"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="projects_container container grid">
+        <a class="project_content" style="background-color: #8a25c2;" href="#" data-target="#project_modal"
+          data-toggle="modal" data-url="iot_projects">
+          <div class="project_data">
+            <h3 class="project_title">IoT</h3>
+            <div class="project_description">What IoT Projects I have done in last few years</div>
+            <button class="button button-flex project_view_button">
+              View
+              <i class="uil uil-arrow-right button_icon project_button_arrow"></i>
+            </button>
           </div>
-        </div>
-        <div class="swiper-button-nxt">
-          <i class="uil uil-angle-right-b swiper_project_icon"></i>
-        </div>
-        <div class="swiper_bullet_container">
-          <div class="swiper-pagination"></div>
-        </div>
+        </a>
+
+        <a class="project_content" style="background-color: #744e00;" href="#" data-target="#project_modal"
+          data-toggle="modal" data-url="fullstack_projects">
+          <div class="project_data">
+            <h3 class="project_title">Full Stack</h3>
+            <div class="project_description">Details of Full Stack Projects done in last few years</div>
+            <button class="button button-flex project_view_button">
+              View
+              <i class="uil uil-arrow-right button_icon project_button_arrow"></i>
+            </button>
+          </div>
+        </a>
+
+        <a class="project_content" style="background-color: #3d9117;" href="#" data-target="#project_modal"
+          data-toggle="modal" data-url="console_projects">
+          <div class="project_data">
+            <h3 class="project_title">Console / Programming</h3>
+            <div class="project_description">Console Projects Details</div>
+            <button class="button button-flex project_view_button">
+              View
+              <i class="uil uil-arrow-right button_icon project_button_arrow"></i>
+            </button>
+          </div>
+        </a>
+
+        <a class="project_content" style="background-color: #2e82e3;" href="#" data-target="#project_modal"
+          data-toggle="modal" data-url="ml_projects">
+          <div class="project_data">
+            <h3 class="project_title">Machine Learning</h3>
+            <div class="project_description">Few projects related to ML</div>
+            <button class="button button-flex project_view_button">
+              View
+              <i class="uil uil-arrow-right button_icon project_button_arrow"></i>
+            </button>
+          </div>
+        </a>
+
+        <a class="project_content" style="background-color: #cf0303;" href="#" data-target="#project_modal"
+          data-toggle="modal" data-url="designing_projects">
+          <div class="project_data">
+            <h3 class="project_title">Designing</h3>
+            <div class="project_description">Posters and Logos what I Designed</div>
+            <button class="button button-flex project_view_button">
+              View
+              <i class="uil uil-arrow-right button_icon project_button_arrow"></i>
+            </button>
+          </div>
+        </a>
       </div>
     </section>
-
 
     <!--==================== Contact Me ====================-->
     <section class="contact section" id="contact">
@@ -767,8 +761,8 @@
         </div>
       </div>
       <p class="footer_copyright">&#169; Niranjan Hegde. All Rights Reserved</p>
-      <img src="https://visitor-badge.glitch.me/badge?page_id=$(niranjan-hegde.me)" alt="visitor badge"
-        style="display: none;" />
+      <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=$(niranjan-hegde.me)" alt="visitor badge"
+        style="display: none;" /> -->
     </div>
   </footer>
 
