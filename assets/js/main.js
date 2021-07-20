@@ -404,8 +404,6 @@ Pageclip.form(form, {
     onResponse: function (error, response) {
         removeSubmitLoader()
 
-        console.log('error: ' + error + ' response: ' + response)
-
         if (error) {
             showDataSubmissionAlert('error')
             setTimeout(removeDataSubmissionAlert, 60000)
