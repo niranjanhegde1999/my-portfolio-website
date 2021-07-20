@@ -408,15 +408,17 @@ Pageclip.form(form, {
 
         if (error) {
             showDataSubmissionAlert('error')
-            //setTimeout(removeDataSubmissionAlert, 60000)
+            setTimeout(removeDataSubmissionAlert, 60000)
         }
 
         if (response) {
-            let responseData = JSON.parse(response)
+            /* let responseData = JSON.parse(response)
             if (responseData['data'] === 'ok') {
                 showDataSubmissionAlert('success')
-                //setTimeout(removeDataSubmissionAlert, 30000)
-            }
+                setTimeout(removeDataSubmissionAlert, 30000)
+            } */
+            showDataSubmissionAlert('success')
+            setTimeout(removeDataSubmissionAlert, 30000)
         }
         return false
     }
