@@ -723,6 +723,7 @@ button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: .3s;
 }
 
 .project_data {
@@ -755,9 +756,36 @@ button {
     background: none;
 }
 
+.project_content:hover {
+    transform: scale(1.05);
+}
+
 .project_content:hover .project_button_arrow {
     transform: translateX(.25rem);
 }
+
+.project_modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: var(--z-modal);
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
 
 /* =============== Contact =============== */
 .contact {
