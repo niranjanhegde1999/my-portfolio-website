@@ -444,7 +444,10 @@ projectBlocks.forEach(block => {
     })
 })
 
-let closeProjectModal = () => { projectModal.style.display = 'none' }
+let closeProjectModal = () => {
+    projectModal.style.display = 'none'
+    document.body.style.overflow = 'auto'
+}
 
 
 projectModalClose.forEach(btn => {
