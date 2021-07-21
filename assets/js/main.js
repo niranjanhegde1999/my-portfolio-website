@@ -421,3 +421,32 @@ Pageclip.form(form, {
         return false
     }
 })
+
+
+const projectBlocks = document.querySelectorAll('.project_content'),
+    projectModal = document.getElementById('project-modal'),
+    projectModalTitle = document.getElementById('project-modal-title'),
+    projectModalContent = document.getElementById('project-modal-content'),
+    projectModalClose = document.querySelectorAll('.project_modal_close')
+
+console.log(projectModal)
+console.log(projectModalTitle)
+console.log(projectModalContent)
+console.log(projectModalClose)
+
+projectBlocks.forEach(block => {
+    block.addEventListener('click', (e) => {
+        e.preventDefault()
+        projectModal.style.display = 'flex'
+        projectModalTitle.innerHTML = block.dataset.title
+        document.body.style.overflow = 'hidden'
+        //projectModalContent.innerHTML = '<iframe src ="' + block.dataset.url + '.html" frameBorder="0" width="100%" height="100%"></iframe>'
+    })
+})
+
+let closeProjectModal = () => { projectModal.style.display = 'none' }
+
+
+projectModalClose.forEach(btn => {
+    btn.addEventListener('click', closeProjectModal)
+});

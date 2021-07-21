@@ -567,8 +567,7 @@
       <span class="section_subtitle">Academic and Personal Projects</span>
 
       <div class="projects_container container grid">
-        <a class="project_content" style="background-color: #8a25c2;" href="#" data-target="#project_modal"
-          data-toggle="modal" data-url="iot_projects">
+        <a class="project_content" style="background-color: #8a25c2;" href="#" data-url="iot_projects" data-title="IoT">
           <div class="project_data">
             <h3 class="project_title">IoT</h3>
             <div class="project_description">What IoT Projects I have done in last few years</div>
@@ -579,8 +578,8 @@
           </div>
         </a>
 
-        <a class="project_content" style="background-color: #744e00;" href="#" data-target="#project_modal"
-          data-toggle="modal" data-url="fullstack_projects">
+        <a class="project_content" style="background-color: #744e00;" href="#" data-url="fullstack_projects"
+          data-title="Full Stack">
           <div class="project_data">
             <h3 class="project_title">Full Stack</h3>
             <div class="project_description">Details of Full Stack Projects done in last few years</div>
@@ -591,8 +590,8 @@
           </div>
         </a>
 
-        <a class="project_content" style="background-color: #3d9117;" href="#" data-target="#project_modal"
-          data-toggle="modal" data-url="console_projects">
+        <a class="project_content" style="background-color: #3d9117;" href="#" data-url="console_projects"
+          data-title="Console / Programming">
           <div class="project_data">
             <h3 class="project_title">Console / Programming</h3>
             <div class="project_description">Console Projects Details</div>
@@ -603,8 +602,8 @@
           </div>
         </a>
 
-        <a class="project_content" style="background-color: #2e82e3;" href="#" data-target="#project_modal"
-          data-toggle="modal" data-url="ml_projects">
+        <a class="project_content" style="background-color: #2e82e3;" href="#" data-url="ml_projects"
+          data-title="Machine Learning">
           <div class="project_data">
             <h3 class="project_title">Machine Learning</h3>
             <div class="project_description">Few projects related to ML</div>
@@ -615,8 +614,8 @@
           </div>
         </a>
 
-        <a class="project_content" style="background-color: #cf0303;" href="#" data-target="#project_modal"
-          data-toggle="modal" data-url="designing_projects">
+        <a class="project_content" style="background-color: #cf0303;" href="#" data-url="designing_projects"
+          data-title="Designing">
           <div class="project_data">
             <h3 class="project_title">Designing</h3>
             <div class="project_description">Posters and Logos what I Designed</div>
@@ -629,12 +628,27 @@
       </div>
 
       <!-- Modal -->
-      <div id="project_modal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-            
+      <div class="project_modal_overlay" id="project-modal">
+        <div class="project_modal">
+          <span class="project_modal_close">&times;</span>
+          <!-- Modal content -->
+          <div class="project_modal_header">
+            <button class="button button-flex project_view_button previous_project">
+              <i class="uil uil-arrow-left project_button_arrow project_nav_button_icon"></i>
+              <span>Previous</span>
+            </button>
+            <h3 class="project_modal_title" id="project-modal-title">Project Title</h3>
+            <button class="button button-flex project_view_button next_project">
+              <span>Next</span>
+              <i class="uil uil-arrow-right project_button_arrow project_nav_button_icon"></i>
+            </button>
+          </div>
+          <div class="project_modal_content" id="project-modal-content">
+            Project Details are Updating Soon...<br>
+          </div>
+          <div class="project_modal_footer">
+            <button class="button button-small project_modal_close">Close</button>
+          </div>
         </div>
       </div>
     </section>
